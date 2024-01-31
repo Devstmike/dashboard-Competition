@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/26aafe571c.js" crossorigin="anonymous"></script>
+    <script src="script.js" defer></script>
+     <!-- Aos (Animate on scroll) animation-->
+    <link href="https://cdn.rawgit.com/michalsnik/aos/2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- animate.style -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <!-- google chart -->
+    <!-- <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js" ></script> -->
+    <!-- chart.js -->
+    <script src="
+    https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js
+    "></script>
+</head>
+<body id="">
+    <!-- Sidebar starts -->
+    <aside class="sideBar">     
+        <div class="mainMenu">
+            <img src="./Assets/Icons/siteLogo.svg" alt="">
+            <img src="./Assets/Icons/Category.svg" alt="">
+            <img src="./Assets//Icons/2.svg" alt="">
+            <img src="./Assets/Icons/3.svg" alt="">
+            <img src="./Assets/Icons/4.svg" alt="">
+            <img src="./Assets/Icons/5.svg" alt="">
+            <img src="./Assets/Icons/info-circle.svg" alt="">
+            <div class="mode">
+                <img src="./Assets/Icons/7.svg" alt="" id="lightMode">
+                <img src="./Assets/Icons/moon 1.svg" alt="" id="darkMode">
+            </div>
+        </div>
+        <div class="other">
+            <img src="./Assets/Icons/arrow-right.svg" alt="">
+            <img src="./Assets/Icons/setting-2.svg" alt="">
+            <img src="./Assets/Icons/logout.svg" alt="">
+        </div>
+    </aside>
+    <!-- sidebar ends -->
+    <!-- Site main content starts -->
+    <main class="mainContent">
+        <!-- header start -->
+        <header>
+            <h3>Dashboard</h3>
+            <div class="wrapper">
+                <div class="search">
+                    <img src="./Assets/Icons/searchIcon].svg" alt="">
+                    <input type="search" placeholder="Search...">
+                </div>
+                <div class="date">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <h5 id="headerDate">November 15,2023</h5>
+                </div>       
+                <div class="wrapper">
+                    <i class="fa-regular fa-bell"></i>
+                    <div class="profile">
+                        <img src="./Assets/Images/ProfileImage.jpg" alt="">
+                        <div class="info">
+                            <h5 id="profileName">Justin Bergson</h5>
+                            <small>justin@gmail.com</small>
+                        </div>
+                    </div>    
+                </div>    
+            </div>
+        </header>
+        <!-- header ends -->
+        <!-- Dashboard Section -->
+        <section class="Dashboard">
+            <!--  firstDataSection starts -->
+            <section class="DataSection firstDataSection">
+                <!-- first Column starts -->
+                <div class="sales">
+                    <!-- header starts -->
+                    <div class="headerData">
+                        <h1>Sales Trends</h1>
+                        <div class="sort">
+                            <div class="chooseChart">
+                                <h5>Chart type</h5>
+                                <select name="" id="chartType">
+                                    <option value="bar" selected>bar</option>
+                                    <option value="line">line</option>
+                                    <option value="pie">pie</option>
+                                    <option value="doughnut">doughnut</option>
+                                    <option value="radar">radar</option>
+                                    <option value="polarArea">polarArea</option>
+                                </select>
+                            </div>
+                            <!-- <h5>Sort by :</h5>
+                            <div class="selectWrapper">
+                                <select name="" id="">
+                                    <option value="">Weekly</option>
+                                </select>    
+                            </div> -->
+                        </div>
+                    </div>
+                    <!-- header ends -->
+                    <!-- chart starts -->
+                    <canvas id="myChart" style="width:100%;max-width:600px; max-height: 300px;"></canvas>
+                    <!-- chart ends -->
+                </div>
+                <!-- first column ends -->
+                <!-- second column starts -->
+                <div class="other">
+                    <!-- item start -->
+                    <div class="item positiveValue">
+                        <div class="icons">
+                            <img src="./Assets/Icons/totalOrder.svg" alt="">
+                            <img src="./Assets/Icons/positiveTrend.svg" alt="">
+                        </div>
+                        <p>Total Order</p>
+                        <h3 id="totalOrder">350</h3>
+                        <div class="wrapper">
+                            <div class="percentage">
+                                <img src="./Assets/Icons/upTrendArrow.svg" alt="">
+                                <span>23,5%</span>
+                            </div>
+                            <p>vs. previous month</p>
+                        </div>
+                    </div>
+                    <!-- item ends -->
+                    <!-- item start -->
+                    <div class="item negativeValue">
+                        <div class="icons">
+                            <img src="./Assets/Icons/totalRefund.svg" alt="">
+                            <img src="./Assets/Icons/negativeTrend.svg" alt="">
+                        </div>
+                        <p>Total Refund</p>
+                        <h3 id="totalOrder">270</h3>
+                        <div class="wrapper">
+                            <div class="percentage">
+                                <img src="Assets/Icons/downTrendArrow.svg" alt="">
+                                <span>23,5%</span>
+                            </div>
+                            <p>vs. previous month</p>
+                        </div>
+                    </div>
+                    <!-- item ends -->
+                    <!-- item start -->
+                    <div class="item negativeValue">
+                        <div class="icons">
+                            <img src="./Assets/Icons/averageSales.svg" alt="">
+                            <img src="./Assets/Icons/negativeTrend.svg" alt="">
+                        </div>
+                        <p>Average Sales</p>
+                        <h3 id="totalOrder">1567</h3>
+                        <div class="wrapper">
+                            <div class="percentage">
+                                <img src="./Assets/Icons/downTrendArrow.svg" alt="">
+                                <span>23,5%</span>
+                            </div>
+                            <p>vs. previous month</p>
+                        </div>
+                    </div>
+                    <!-- item ends -->
+                    <!-- item start -->
+                    <div class="item positiveValue">
+                        <div class="icons">
+                            <img src="./Assets/Icons/totalincome.svg" alt="">
+                            <img src="./Assets/Icons/positiveTrend.svg" alt="">
+                        </div>
+                        <p>Total Income</p>
+                        <h3 id="totalOrder">$350.000</h3>
+                        <div class="wrapper">
+                            <div class="percentage">
+                                <img src="./Assets/Icons/upTrendArrow.svg" alt="">
+                                    <span>23,5%</span>
+                            </div>
+                            <p>vs. previous month</p>
+                        </div>
+                    </div>
+                    <!-- item ends -->
+                </div>
+                <!-- second column ends -->
+                </section>
+            <!-- firstDataSection  ends -->
+                <!-- secondData section starts -->
+                <section class="DataSection secondDataSection">
+                    <div class="LastOrder">
+                        <div class="heading">
+                            <h4>Last Orders</h4>
+                            <div class="wrap">
+                                <div class="filter">
+
+                                </div>
+                                <p>See All</p>
+                            </div>
+                        </div>
+                        <table style="width: 100%;">
+                            <thead>
+                                <tr>
+                                    <td>Name</td>
+                                    <td>Date</td>
+                                    <td>Amount</td>
+                                    <td>Status</td>
+                                    <td>Invoice</td>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="display: none;">
+                                    <td  style="display: flex; justify-content: start; align-items: center;">
+                                        <img src="./Assets/Images/Marcus.jpg" alt="" style="width: 30px; height: 30px; object-fit: cover; margin-right: 10px; border-radius: 50%;" id="OrderPlacerImage">
+                                        <span class="name">Marcus Bergson</span>
+                                    </td>
+                                    <td class="date">Nov 15, 2023</td>
+                                    <td class="amount">$80,000</td>
+                                    <td class="paid">Paid</td>
+                                    <td>
+                                        <i class="fa-regular fa-file-lines" style="margin-right: 5px;"></i>
+                                        <span>View</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td  style="display: flex; justify-content: start; align-items: center;">
+                                        <img src="./Assets/Images/Jaydon.jpg" alt="" style="width: 30px; height: 30px; object-fit: cover; margin-right: 10px; border-radius: 50%;" id="OrderPlacerImage">
+                                        <span class="name">Jaydon Vaccaro</span>
+                                    </td>
+                                    <td class="date">Nov 15, 2023</td>
+                                    <td class="amount">$150,000</td>
+                                    <td class="refund">Refund</td>
+                                    <td>
+                                        <i class="fa-regular fa-file-lines" style="margin-right: 5px;"></i>
+                                        <span>View</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td  style="display: flex; justify-content: start; align-items: center;">
+                                        <img src="./Assets/Images/Corey.jpg" alt="" style="width: 30px; height: 30px; object-fit: cover; margin-right: 10px; border-radius: 50%;" id="OrderPlacerImage">
+                                        <span class="name">Corey Schleifer</span>
+                                    </td>
+                                    <td class="date">Nov 14, 2023</td>
+                                    <td class="amount">$87,000</td>
+                                    <td class="paid">Paid</td>
+                                    <td>
+                                        <i class="fa-regular fa-file-lines" style="margin-right: 5px;"></i>
+                                        <span>View</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td  style="display: flex; justify-content: start; align-items: center;">
+                                        <img src="./Assets/Images/Cooper.jpg" alt="" style="width: 30px; height: 30px; object-fit: cover; margin-right: 10px; border-radius: 50%;" id="OrderPlacerImage">
+                                        <span class="name">Cooper Press</span>
+                                    </td>
+                                    <td class="date">Nov 14, 2023</td>
+                                    <td class="amount">$100,000</td>
+                                    <td class="refund">Refund</td>
+                                    <td>
+                                        <i class="fa-regular fa-file-lines" style="margin-right: 5px;"></i>
+                                        <span>View</span>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td  style="display: flex; justify-content: start; align-items: center;">
+                                        <img src="./Assets/Images/Philip.jpg" alt="" style="width: 30px; height: 30px; object-fit: cover; margin-right: 10px; border-radius: 50%;" id="OrderPlacerImage">
+                                        <span class="name">Philip Lubin</span>
+                                    </td>
+                                    <td class="date">Nov 13, 2023</td>
+                                    <td class="amount">$78,000</td>
+                                    <td class="paid">Paid</td>
+                                    <td>
+                                        <i class="fa-regular fa-file-lines" style="margin-right: 5px;"></i>
+                                        <span>View</span>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="topPlatform">
+                        <div class="heading">
+                            <h4>Top Platform</h4>
+                            <p>See All</p>
+                        </div>
+                        <div class="bar">
+                            <h4>Book Bazaar</h4>
+                            <div class="transparentBar">
+                                <div class="filledBar purple-Bar">
+                                </div>
+                            </div>
+                            <div class="figures">
+                                <p>$2,500,000</p>
+                                <p>+15%</p>
+                            </div>
+                        </div>
+                        <div class="bar">
+                            <h4>Artisan Aisle</h4>
+                            <div class="transparentBar">
+                                <div class="filledBar lightBlue-Bar ">
+                                </div>
+                            </div>
+                            <div class="figures">
+                                <p>$1,800,000</p>
+                                <p>+10%</p>
+                            </div>
+                        </div>
+                        <div class="bar">
+                            <h4>Toy Troop</h4>
+                            <div class="transparentBar">
+                                <div class="filledBar orange-Bar">
+                                </div>
+                            </div>
+                            <div class="figures">
+                                <p>$1,200,000</p>
+                                <p>+8%</p>
+                            </div>
+                        </div>
+                        <div class="bar">
+                            <h4>XStore</h4>
+                            <div class="transparentBar">
+                                <div class="filledBar red-Bar">
+                                </div>
+                            </div>
+                            <div class="figures">
+                                <p>$600,000</p>
+                                <p>+5%</p>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+                </section>
+                <!-- secondData section ends -->
+        </section>
+        <!-- Dashboard ends -->
+   </main>
+    <!-- site main content ends -->
+    <!-- Entrance display -->
+<section id="EntranceAnimation" >
+    <!-- <i class="fa-solid fa-chart-pie"></i> -->
+    <i class="fa-solid fa-arrow-rotate-right"></i>
+    <p data-aos="zoom-in-left">Mike Analytics</p>
+</section>    
+<script src="script.js"></script>
+<!-- Aos animation test -->
+<script src="https://cdn.rawgit.com/michalsnik/aos/2.3.4/dist/aos.js"></script>
+<!-- Aos animation -->
+<script>AOS.init({duration:2000})</script>
+
+</body>
+</html>

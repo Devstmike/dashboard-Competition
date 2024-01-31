@@ -1,0 +1,570 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    border: none;
+    list-style-type: none;
+    outline: none;
+}
+
+#darkMode, #lightMode, body, header, .sales, .item, #addChart, .topPlatform ,.LastOrder{
+    transition : background-color 1s;
+}
+
+
+:root{
+    --mygreen :green;    
+    --jakarta-font: 'Plus Jakarta Sans', sans-serif;
+    --sideBarWidth : 80px;
+    --primaryColor : #BB372F;
+    --secondaryColor:#3A3F51;
+    --successColor:#00AC56;
+    --errorColor:#FF1F7D;
+    --whiteColor : #FFFFFF;
+    --bgColor:#FDFDFD;
+    --gray-50: #FAFAFA;
+    --gray-100 : #F5F5F5;
+    --gray-200:#E5E5E5;
+    --gray-300 :#B2ABAB;
+    --gray-400:#A3A3A3;
+    --gray-500: #737373;
+    --gray-600:#525252;
+    --gray-700 :#404040;
+    --gray-800:#262626;
+    --gray-900:#171717;
+    --h1-size: 64px;
+    --h2-size:48px;
+    --h3-size:32px;
+    --h4-size:24px;
+    --h5-size:20px;
+    --xl-font:18px;
+    --lg-font:16px;
+    --md-font :14px;
+    --sm-font:12px;
+    --xs-font:10px;
+    --side-padding:20px;
+    --body-bg: #F7F8FA;
+    --body-stroke : #EBECF2;
+    --green : #34CAA5;
+}
+
+body{
+    font-family: var(--jakarta-font);
+    background-color: var(--body-bg) ;
+}
+
+
+.sideBar{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.sideBar > *, .sideBar .mode{
+    display: flex;
+    flex-direction: column;
+}
+
+.sideBar .mainMenu > *, .sideBar .other >*{
+    margin-bottom: 22px;
+}
+
+.sideBar .mainMenu > *:not(:first-child){
+    /* border: 1px solid red; */
+    height: 20px;
+    object-fit: contain;
+}
+/* 
+.sideBar .mode > *{
+    height: 30px;
+    object-fit: contain;
+} */
+
+.sideBar .mode{
+    background-color: var(--whiteColor);
+    /* padding: 10px; */
+    /* border: 3px solid; */
+    /* height: 200px; */
+    /* background-color: red; */
+}
+
+
+
+input, textarea, select{
+    font-family: var(--jakarta-font);
+}
+
+#EntranceAnimation  {
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(247, 242, 242);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 6px solid gray; */
+    /* display: none; */
+    
+}
+
+#EntranceAnimation i{
+    font-size: 5rem;
+    color: var(--mygreen);
+    margin-right: 10px;
+    animation: rotateLogo 0.5s infinite alternate;
+}
+
+#EntranceAnimation p{
+    font-size: 3rem;
+    font-family: var(--jakarta-font);
+    color: white;
+    text-shadow: 2px 2px 10px var(--mygreen);
+}
+
+
+
+.sideBar{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: var(--sideBarWidth);
+    /* box-shadow: 1px 1px 5px var(--gray-200); */
+    border: 1px solid var(--body-stroke);
+}
+
+.mainContent{
+    margin-left: var(--sideBarWidth);
+    /* border: 1px solid red; */
+}
+
+.Dashboard{
+    padding: var(--side-padding);
+   
+}
+
+
+
+header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    /* box-shadow: 1px 1px 5px var(--gray-200); */
+    border: 1px solid var(--body-stroke);
+    padding: 20px;
+    position: sticky;
+    top: 0;
+    background-color: var(--body-bg);
+}
+
+header > .wrapper > *:not(:last-child){
+    margin-right: 30px;
+}
+
+header > div{
+    display: flex;
+    justify-content: space-between;
+}
+
+header .date{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: red; */
+}
+
+header .search{
+    border: 1px solid var(--gray-300);
+    border-radius: 50px;
+    padding: 12px 90px 12px 20px;
+    transition: box-shadow 2s;
+}
+
+header .search i{
+    color: var(--gray-300);
+    margin-right: 10px;
+}
+
+
+.shadow{
+    box-shadow: 1px 1px 5px #34CAA5;
+    border-color: #34CAA5 !important;
+}
+
+header .date i{
+margin-right: 10px;
+}
+
+header .profile img{
+    width: 30px;
+    height: 30px;
+    border-radius: 50px;
+    object-fit: cover;
+    margin-right: 10px;
+}
+
+
+header > .wrapper > .wrapper, header .profile{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .profile{
+    border: 1px solid var(--gray-300);
+    border-radius: 50px;
+    padding: 5px 10px 5px 5px;
+    
+}
+
+header .wrapper > .wrapper i{
+    margin-right: 20px;
+    font-size: 1.3rem;
+    border: 1px solid var(--gray-300);
+    border-radius: 50%;
+    padding: 8px 10px;
+}
+
+
+
+.DataSection{
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+}
+
+.DataSection > div:first-child{
+    width: 60%;
+    margin-right: var(--side-padding);
+    background-color: var(--whiteColor);
+    padding: var(--side-padding);
+    border-radius: 10px;
+}
+
+.DataSection > div:last-child{
+    width: 40%;
+}
+
+.DataSection > *{
+    /* border: 1px solid red; */
+}
+
+
+
+.firstDataSection .other .icons, .firstDataSection .other .wrapper{
+     display: flex;
+     justify-content: space-between;
+     align-items: center;
+}
+
+
+.firstDataSection .other{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--side-padding);
+}
+
+
+.firstDataSection .other .item{
+    border-radius: 10px;
+    background-color: var(--whiteColor);
+    padding: 15px;
+}
+
+.firstDataSection .other .item > *{
+    margin-bottom: 10px;
+}
+
+.firstDataSection{
+    margin-bottom: 20px;
+}
+
+.firstDataSection .headerData, .firstDataSection .sort{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.firstDataSection .selectWrapper{
+    border: 1px solid var(--body-stroke);
+    border-radius: 50px;
+    padding: 5px 8px;
+    margin-left: 10px;
+}
+
+.secondDataSection table tr{
+    border-bottom: 1.5px solid var(--body-stroke);
+}
+
+.secondDataSection table td{
+    padding: 10px 0;
+}
+
+.secondDataSection table{
+    border-collapse: collapse;
+}
+
+
+.DataSection .LastOrder .heading, .DataSection .topPlatform .heading{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.DataSection .topPlatform{
+    padding: var(--side-padding);
+    background-color: var(--whiteColor);
+    border-radius: 10px;
+}
+
+.secondDataSection .figures{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.secondDataSection .filledBar{
+    width: 10%;
+    border-radius: inherit;
+    height: 10px;
+   
+}
+
+.secondDataSection .transparentBar{
+    background-color: var(--body-bg);
+     width: 100%;
+    border-radius: 50px;
+    margin: 10px 0;
+   }
+
+   
+.secondDataSection .topPlatform .bar{
+    margin-top: 20px;
+}
+
+
+
+.secondDataSection .purple-Bar{
+    background-color: #6160DC;
+}
+
+.secondDataSection .lightBlue-Bar{
+    background-color: #54C5EB;
+}
+
+
+.secondDataSection .orange-Bar{
+    background-color: #FFB74A;
+}
+
+.secondDataSection .red-Bar{
+    background-color: #FF4A55;
+}
+
+.firstDataSection .other .wrapper  p{
+    font-size: var(--sm-font);
+}
+
+.firstDataSection .percentage{
+    font-size: 0.8rem;
+    padding: 4px 6px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.firstDataSection .percentage > *:first-child{
+    margin-right: 5px;
+}
+
+.firstDataSection .positiveValue .percentage{
+    background-color: #34caa41f;
+    color: var(--green);
+       border-radius: 50px;
+}
+
+
+.firstDataSection .negativeValue .percentage{
+    background-color: #ed534e3b;
+    color: #ED544E;
+       border-radius: 50px;
+}
+
+
+.secondDataSection .paid{
+    color: var(--green);
+}
+
+.secondDataSection .refund{
+    color: #ED544E;
+}
+
+.secondDataSection .amount{
+    color: #0D062D;
+    font-weight: 500;
+}
+
+.secondDataSection .date{
+    color: var(--gray-500);
+}
+
+.secondDataSection .name{
+    color: var(--secondaryColor);
+    font-weight: 500;
+}
+
+.secondDataSection thead{
+    color: #9CA4AB ;
+}
+
+.secondDataSection > * > .heading p{
+    color:#34CAA5 ;
+}
+
+.secondDataSection > * > .heading h4{
+    color: #26282C;
+}
+
+
+.firstDataSection .item > p{
+    color: #898989;
+    font-weight: 500;
+}
+
+
+.firstDataSection .item > h3{
+    color: #3A3F51;
+}
+
+/* animations */
+@keyframes rotateLogo {
+    0%{
+        transform: rotate(0deg);
+        color: rgb(146, 187, 146);
+    }
+
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+
+header .search{
+    background-color: white;
+    border: 2px solid #7bcab685;
+}
+
+
+header .search:focus{
+    border: 2px solid #34caa4b1;
+}
+
+
+
+header .search::after{
+    inset: 5px;
+
+}
+
+/* dark design */
+body#darkMode #darkMode, body#darkMode #lightMode, body#darkMode, body#darkMode header, body#darkMode .sales, body#darkMode .item, body#darkMode #addChart,body#darkMode  .topPlatform,body#darkMode .LastOrder{
+    background-color:  black !important;
+    /* transition : background-color 2s; */
+}
+
+body#darkMode .LastOrder , body#darkMode .sales, body#darkMode .item, body#darkMode .topPlatform{
+    border: 1px solid var(--gray-300);
+}
+
+body#darkMode table .name, body#darkMode table .amount{
+    color: var(--gray-300) !important;
+}
+
+body#darkMode .figures{
+    color: var(--gray-300);
+}
+
+body#darkMode table  tr > td:last-child{
+    color: #3A3F51 !important;
+}
+
+body#darkMode .bar h4{
+    color:  var(--gray-600);
+}
+
+body#darkMode .heading h4 ,body#darkMode .headerData h1{
+    color: orange !important;
+}
+
+body#darkMode .sort h5{
+  color: var(--green);
+}
+
+.filledBar{
+    transition: width 2s;
+}
+
+
+
+/* animation */
+td, td i, td span{
+    animation: skeleton 1s infinite;
+}
+
+table{
+    animation: skeleton 1s infinite;
+}
+
+/* @keyframes skeleton { */
+
+    /* 0%{ */
+        /* background-color: rgba(248, 244, 244, 0.671);
+        color: rgb(248, 244, 244);
+        border-color: white; */
+        /* border-collapse: separate;
+        border: 1px solid black; */
+    /* } */
+
+    /* 100%{ */
+        /* background-color: rgba(237, 228, 228, 0.662);
+        color: rgb(237, 228, 228);
+        border-color: white; */
+        /* border-collapse: separate;
+        border: 1px solid black; */
+    /* } */
+/* } */
+
+@media only screen and (max-width: 768px) {
+    :root{
+        --sideBarWidth : 0px;
+    }
+
+    aside{
+        display: none !important;
+    }
+
+    header .search, header  .date,header  .fa-bell{
+        display: none;
+    }
+
+    .DataSection{
+        flex-direction: column;
+    }
+
+    
+    /* I used important here because the css is not applying. i know the problem is because some selectors are
+    higher in hierachy because of their specificity. so inorder to overide such seletor. it is better to use !important */
+    .DataSection > *{
+        width: 100% !important;
+        margin-right: 0;
+    }
+}
+
+
+
